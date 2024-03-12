@@ -33,6 +33,8 @@ def initiate_txn():
                 print("Change document: %r" % (change,))
                 val = change['fullDocument']
                 del val['_id']
+                # JSON doesn't support date objects, so convert to string
+                val['timestamp'] = str(val['timestamp'])
                 return json.dumps(val)
             if time.time() > timeout:
                 return {"txn_num":ip['trans_num'], "status":"Failed", "reason":"timeout" }
