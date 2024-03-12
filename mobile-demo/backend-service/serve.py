@@ -1,4 +1,5 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request
+from flask_cors import CORS
 from pymongo import MongoClient
 import json
 import time
@@ -7,12 +8,13 @@ timeout = time.time() + 60*1
 # Flask constructor takes the name of
 # current module (__name__) as argument.
 app = Flask(__name__)
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
 MONGO_CONN = "<MONGO_SECRET>"
 client = MongoClient(MONGO_CONN)
-database="fraud-detection"
-write_collection = 'txn-data-stream'
-read_collection = 'txn_status'
+database = "fraud-detection"
+write_collection = "txn-data-stream"
+read_collection = "txn_status"
 
 # The route() function of the Flask class is a decorator,
 # which tells the application which URL should call
