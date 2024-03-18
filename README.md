@@ -2,7 +2,7 @@
 
 DEMO VIDEO : https://drive.google.com/file/d/1_6YDqa-G6f9koklkF4l-gUpWczeDHJiu/view?usp=share_link
 
-Data Used in the story : https://drive.google.com/file/d/1ys6sjFvYf2-DEF1W6RgKI7B5hM5Ap3mE/view?usp=share_link
+Data Used in the story : https://drive.google.com/file/d/1gx7DOxJA8OwjoJVeWGtdQwZP0StAnoeF/view?usp=sharing
 
 
 ### Introduction
@@ -34,6 +34,12 @@ In this architecture, Kafka is utilized as an alternative solution for transferr
 - **Transaction Prediction Service**: This is a middleware which uses persisted data in MongoDB for model management, enabling organizations to make predictions and gain insights based on the data. This service streamlines workflows and optimizes decision-making processes, helping businesses stay ahead of the curve.
 
  ## Notebooks
+
+ ### Requirements
+ Running the notebooks requires the following:
+ - Spark 3.1.x - 3.3.x (Spark 3.5.x support coming soon)
+ - Install library via maven: org.mongodb.spark:mongo-spark-connector_2.12:10.2.1
+ - Install library via PyPi: databricks-feature-store
  
  ### Model Training and Registeration
 
